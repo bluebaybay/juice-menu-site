@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jay's Health Elixirs</title>
+  <title>Jay's Healthy Juice Shop</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
@@ -14,13 +14,14 @@
     .navbar {
       background-color: #43a047;
     }
-    .navbar-brand {
-      font-weight: bold;
+    .navbar-brand, .nav-link, .dropdown-item {
       color: #fff !important;
-      font-size: 1.8rem;
+    }
+    .navbar-nav .nav-link:hover, .dropdown-item:hover {
+      background-color: #388e3c;
     }
     header {
-      background: url('https://raw.githubusercontent.com/prof-rossetti/internet-technologies/main/exercises/website-challenge/images/juice-banner.jpg') no-repeat center center;
+      background: url('images/banner.jpg') no-repeat center center;
       background-size: cover;
       height: 400px;
       display: flex;
@@ -63,7 +64,24 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#">Jay's Health Elixirs</a>
+      <a class="navbar-brand" href="#">Jay's Healthy Juice Shop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Menu
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
+              <li><a class="dropdown-item" href="#juices">Cold-Pressed Juices</a></li>
+              <li><a class="dropdown-item" href="#smoothies">Smoothies</a></li>
+              <li><a class="dropdown-item" href="#shots">Wellness Shots</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -78,13 +96,13 @@
   <!-- Product Sections -->
   <div class="container">
     <!-- Cold-Pressed Juices -->
-    <h2 class="section-title">Cold-Pressed Juices</h2>
+    <h2 class="section-title" id="juices">Cold-Pressed Juices</h2>
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card product-card">
           <img src="images/green-punch.jpg" class="card-img-top" alt="Green Punch">
           <div class="card-body">
-            <h5 class="card-title">Green Punch</h5>
+            <h5 class="card-title">Green Punch - $5.55</h5>
             <p class="card-text">Kale, Spinach, Cucumber, Celery, Lemon, Apple</p>
           </div>
         </div>
@@ -93,7 +111,7 @@
         <div class="card product-card">
           <img src="images/orange-you-glad.jpg" class="card-img-top" alt="Orange You Glad">
           <div class="card-body">
-            <h5 class="card-title">Orange You Glad</h5>
+            <h5 class="card-title">Orange You Glad - $5.55</h5>
             <p class="card-text">Carrot, Orange, Ginger, Turmeric</p>
           </div>
         </div>
@@ -101,13 +119,13 @@
     </div>
 
     <!-- Smoothies -->
-    <h2 class="section-title">Smoothies</h2>
+    <h2 class="section-title" id="smoothies">Smoothies</h2>
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card product-card">
           <img src="images/blueberry-smoothie.jpg" class="card-img-top" alt="Berry Bliss">
           <div class="card-body">
-            <h5 class="card-title">Berry Bliss</h5>
+            <h5 class="card-title">Berry Bliss - $5.55</h5>
             <p class="card-text">Blueberries, Banana, Almond Milk, Flaxseed</p>
           </div>
         </div>
@@ -115,13 +133,13 @@
     </div>
 
     <!-- Wellness Shots -->
-    <h2 class="section-title">Wellness Shots</h2>
+    <h2 class="section-title" id="shots">Wellness Shots</h2>
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card product-card">
-          <img src="images/wellness-shot.jpg" class="card-img-top" alt="Immunity Shot">
+          <img src="images/wellness.jpg" class="card-img-top" alt="Immunity Shot">
           <div class="card-body">
-            <h5 class="card-title">Immunity Shot</h5>
+            <h5 class="card-title">Immunity Shot - $5.55</h5>
             <p class="card-text">Ginger, Lemon, Cayenne Pepper, Raw Honey</p>
           </div>
         </div>
@@ -131,7 +149,9 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Jay's Health Elixirs. Made with love and organic produce.</p>
+    <p>&copy; 2025 Jay's Healthy Juice Shop. Made with love and organic produce.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
