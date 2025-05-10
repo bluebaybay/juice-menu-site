@@ -2,175 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>NASA Space Explorer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jay's Health Elixirs</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    :root {
-      --bg-color: #0b0c10;
-      --primary-color: #1f2833;
-      --accent-color: #45a29e;
-      --hover-color: #66fcf1;
-      --text-color: #ffffff;
-      --light-text: #c5c6c7;
-      --shadow: rgba(0, 0, 0, 0.5);
-    }
-
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      padding: 20px;
-      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5fff7;
+      color: #2e2e2e;
     }
-
+    .navbar {
+      background-color: #43a047;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #fff !important;
+      font-size: 1.8rem;
+    }
     header {
-      padding: 30px 10px;
-      background-color: var(--primary-color);
-      border-bottom: 4px solid var(--accent-color);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: var(--hover-color);
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: var(--light-text);
-    }
-
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-    }
-
-    .controls {
-      background-color: var(--primary-color);
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px var(--shadow);
-      margin-bottom: 40px;
-      text-align: left;
-    }
-
-    .controls label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-      color: var(--light-text);
-    }
-
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: none;
-    }
-
-    input {
-      background-color: #f4f4f4;
-      color: #111;
-    }
-
-    button {
-      background-color: var(--accent-color);
+      background: url('https://raw.githubusercontent.com/prof-rossetti/internet-technologies/main/exercises/website-challenge/images/juice-banner.jpg') no-repeat center center;
+      background-size: cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    header h1 {
+      font-size: 3.5rem;
+    }
+    .section-title {
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
       font-weight: bold;
-      margin-top: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: var(--hover-color);
-      color: var(--bg-color);
-    }
-
-    .output {
-      background-color: var(--primary-color);
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px var(--shadow);
-      margin-top: 20px;
-    }
-
-    .output img {
-      max-width: 100%;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
-
-    .output h2 {
-      color: var(--hover-color);
-    }
-
-    footer {
-      margin-top: 60px;
       text-align: center;
-      font-size: 0.9rem;
-      color: var(--light-text);
+      color: #388e3c;
+    }
+    .product-card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+    .card-title {
+      font-weight: 600;
+    }
+    footer {
+      background-color: #e8f5e9;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      text-align: center;
     }
   </style>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Jay's Health Elixirs</a>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
   <header>
-    <h1>🚀 NASA Space Explorer</h1>
-    <p>Explore NASA's Astronomy Picture of the Day</p>
+    <div class="text-center">
+      <h1>Fresh. Organic. Powerful.</h1>
+      <p class="lead">Elevate your energy with our cold-pressed juices & smoothies</p>
+    </div>
   </header>
 
-  <main>
-    <div class="controls">
-      <label for="apiKey">Enter your NASA API Key:</label>
-      <input type="text" id="apiKey" placeholder="e.g. DEMO_KEY" />
-
-      <label for="datePicker">Choose a Date:</label>
-      <input type="date" id="datePicker" />
-
-      <button onclick="fetchAPOD()">Get Picture</button>
+  <!-- Product Sections -->
+  <div class="container">
+    <!-- Cold-Pressed Juices -->
+    <h2 class="section-title">Cold-Pressed Juices</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="images/green-punch.jpg" class="card-img-top" alt="Green Punch">
+          <div class="card-body">
+            <h5 class="card-title">Green Punch</h5>
+            <p class="card-text">Kale, Spinach, Cucumber, Celery, Lemon, Apple</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="images/orange-you-glad.jpg" class="card-img-top" alt="Orange You Glad">
+          <div class="card-body">
+            <h5 class="card-title">Orange You Glad</h5>
+            <p class="card-text">Carrot, Orange, Ginger, Turmeric</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div id="output" class="output"></div>
-  </main>
+    <!-- Smoothies -->
+    <h2 class="section-title">Smoothies</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="images/blueberry-smoothie.jpg" class="card-img-top" alt="Berry Bliss">
+          <div class="card-body">
+            <h5 class="card-title">Berry Bliss</h5>
+            <p class="card-text">Blueberries, Banana, Almond Milk, Flaxseed</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Wellness Shots -->
+    <h2 class="section-title">Wellness Shots</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="images/wellness-shot.jpg" class="card-img-top" alt="Immunity Shot">
+          <div class="card-body">
+            <h5 class="card-title">Immunity Shot</h5>
+            <p class="card-text">Ginger, Lemon, Cayenne Pepper, Raw Honey</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 NASA Space Explorer</p>
+    <p>&copy; 2025 Jay's Health Elixirs. Made with love and organic produce.</p>
   </footer>
-
-  <script>
-    function fetchAPOD() {
-      const apiKey = document.getElementById('apiKey').value.trim();
-      const date = document.getElementById('datePicker').value;
-      const output = document.getElementById('output');
-
-      if (!apiKey || !date) {
-        output.innerHTML = "<p>Please enter both API key and date.</p>";
-        return;
-      }
-
-      const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
-
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          if (data.media_type === "image") {
-            output.innerHTML = `
-              <h2>${data.title}</h2>
-              <p><strong>Date:</strong> ${data.date}</p>
-              <img src="${data.url}" alt="${data.title}" />
-              <p>${data.explanation}</p>
-            `;
-          } else {
-            output.innerHTML = `<p>This content is not an image. Try another date.</p>`;
-          }
-        })
-        .catch(err => {
-          console.error(err);
-          output.innerHTML = `<p>Error fetching data. Check your API key and date.</p>`;
-        });
-    }
-  </script>
 </body>
 </html>
